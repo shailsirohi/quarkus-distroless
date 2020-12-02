@@ -12,7 +12,7 @@ def debian_dependencies():
     dpkg_src(
         name = "amd64_debian10",
         arch = "amd64",
-        distro = "stretch",
+        distro = "buster",
         sha256 = "369d45f6c138af98d8ea8a598564dcabc1f6991ac777fb2d351e846f195cdc13",
         snapshot = "20201123T030316Z",
         url = "https://snapshot.debian.org/archive",
@@ -21,7 +21,7 @@ def debian_dependencies():
     dpkg_src(
         name = "amd64_debian10_updates",
         arch = "amd64",
-        distro = "stretch-updates",
+        distro = "buster-updates",
         sha256 = "5182b40388284eb0eb2199906ec6f4b969391460911db3fba8af22dceecf957e",
         snapshot = "20201123T030316Z",
         url = "https://snapshot.debian.org/archive",
@@ -30,7 +30,7 @@ def debian_dependencies():
     dpkg_src(
         name = "amd64_debian10_security",
         package_prefix = "https://snapshot.debian.org/archive/debian-security/20201123T063456Z/",
-        packages_gz_url = "https://snapshot.debian.org/archive/debian-security/20201123T063456Z/dists/stretch/updates/main/binary-amd64/Packages.gz",
+        packages_gz_url = "https://snapshot.debian.org/archive/debian-security/20201123T063456Z/dists/buster/updates/main/binary-amd64/Packages.gz",
         sha256 = "6fd98039007bd2d242a23bd52bb55525b4ad3c9fab41eefa02e1b5a89ab54bd1",
     )
 
