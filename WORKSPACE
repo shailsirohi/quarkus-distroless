@@ -31,11 +31,10 @@ go_register_toolchains()
 gazelle_dependencies()
 
 # Download the rules_docker repository at release v0.14.4
-http_archive(
+git_repository(
     name = "io_bazel_rules_docker",
-    sha256 = "3efbd23e195727a67f87b2a04fb4388cc7a11a0c0c2cf33eec225fb8ffbb27ea",
-    strip_prefix = "rules_docker-0.14.2",
-    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.14.2/rules_docker-v0.14.2.tar.gz"],
+    commit = "c85e7b6cd5f812081bbfe44fb657ce89ffebfcc3",
+    remote = "https://github.com/bazelbuild/rules_docker.git",
 )
 
 load(
