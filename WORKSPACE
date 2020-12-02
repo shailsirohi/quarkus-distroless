@@ -5,10 +5,10 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository", "new_git_r
 
 http_archive(
     name = "io_bazel_rules_go",
-    sha256 = "2697f6bc7c529ee5e6a2d9799870b9ec9eaeb3ee7d70ed50b87a2c2c97e13d9e",
+    sha256 = "a8d6b1b354d371a646d2f7927319974e0f9e52f73a2452d2b3877118169eb6bb",
     urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.23.8/rules_go-v0.23.8.tar.gz",
-        "https://github.com/bazelbuild/rules_go/releases/download/v0.23.8/rules_go-v0.23.8.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.23.3/rules_go-v0.23.3.tar.gz",
+        "https://github.com/bazelbuild/rules_go/releases/download/v0.23.3/rules_go-v0.23.3.tar.gz",
     ],
 )
 
@@ -33,9 +33,9 @@ gazelle_dependencies()
 # Download the rules_docker repository at release v0.14.4
 http_archive(
     name = "io_bazel_rules_docker",
-    sha256 = "4521794f0fba2e20f3bf15846ab5e01d5332e587e9ce81629c7f96c793bb7036",
-    strip_prefix = "rules_docker-0.14.4",
-    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.14.4/rules_docker-v0.14.4.tar.gz"],
+    sha256 = "3efbd23e195727a67f87b2a04fb4388cc7a11a0c0c2cf33eec225fb8ffbb27ea",
+    strip_prefix = "rules_docker-0.14.2",
+    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.14.2/rules_docker-v0.14.2.tar.gz"],
 )
 
 load(
@@ -44,13 +44,11 @@ load(
 )
 container_repositories()
 
+# This is NOT needed when going through the language lang_image
+# "repositories" function(s).
 load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
-
-# load("@io_bazel_rules_docker//repositories:pip_repositories.bzl", "io_bazel_rules_docker_pip_deps")
-
-# io_bazel_rules_docker_pip_deps()
 
 load(
     "@io_bazel_rules_docker//container:container.bzl",
@@ -65,7 +63,7 @@ container_pull(
 
 git_repository(
     name = "distroless",
-    commit = "03b1c748f6c7aa5d81b92838374309ac997e8100",
+    commit = "d643d99792b74ddfdc5bea8c6ac0a3cd0f65e329",
     remote = "https://github.com/GoogleContainerTools/distroless.git",
 )
 

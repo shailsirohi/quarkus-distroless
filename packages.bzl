@@ -1,13 +1,13 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_file")
 
 load(
-  "@distroless//package_manager:dpkg.bzl",
-  "dpkg_src",
-  "dpkg_list",
+    "@distroless//package_manager:dpkg.bzl",
+    "dpkg_list",
+    "dpkg_src"
 )
 
 def debian_dependencies():
-
 
     dpkg_src(
         name = "amd64_debian10",
