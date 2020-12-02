@@ -9,7 +9,8 @@ container_image(
     repository = "shailsirohi/quarkus-distroless",
     base = "@distroless_base//image",
     debs = [
-        packages["libstdc++6"],
+        packages["libgcc1"],
 	packages["zlib1g"],
+	packages["libstdc++6"],
     ],
 )

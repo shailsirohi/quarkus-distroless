@@ -57,7 +57,8 @@ load(
 container_pull(
   name = "distroless_base",
   registry = "gcr.io",
-  repository = "distroless/base",
+  repository = "distroless/base-debian10",
+  tag = "latest-amd64"
 )
 
 git_repository(

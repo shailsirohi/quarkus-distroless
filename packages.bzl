@@ -39,6 +39,7 @@ def debian_dependencies():
         packages = [
             "libstdc++6",
             "zlib1g",
+	    "libgcc1",
         ],
         sources = [
             "@amd64_debian10_security//file:Packages.json",
